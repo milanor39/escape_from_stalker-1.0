@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkescape_from_stalker0_5"]=self["webpackChunkescape_from_stalker0_5"]||[]).push([[443],{381:function(e,a,n){n.r(a),n.d(a,{default:function(){return l}});var r=n(252);const s={class:"about"},t=(0,r._)("h1",null,"This is an about page",-1),u=[t];function c(e,a){return(0,r.wg)(),(0,r.iD)("div",s,u)}var o=n(744);const f={},i=(0,o.Z)(f,[["render",c]]);var l=i}}]);
+//# sourceMappingURL=about.4601f242.js.map
