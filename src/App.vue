@@ -2,18 +2,18 @@
   <!--遊戲標題-->
   <GameTitleVue v-if="currentSection === 'gameTitle'">
     <template v-slot:button>
-      <button id="start-game" @click="nextSection('gameStory')">遊戲開始</button>
+      <button id="start-game" class="bottom-setting" @click="nextSection('gameStory')">遊戲開始</button>
     </template>
   </GameTitleVue>
 
   <!--遊戲劇情-->
   <GameStoryVue v-if="currentSection === 'gameStory'">
-    <button id="close-instroduction" @click="nextSection('gameBattle')">關閉說明</button>
+    <button id="close-instroduction" class="bottom-setting" @click="nextSection('gameBattle')">關閉說明</button>
   </GameStoryVue>
 
   <!--遊戲戰鬥-->
   <GameBattleVue v-if="currentSection === 'gameBattle'">
-    <button @click="nextSection('gameTitle')">重新開始</button>
+    <button id="restart" class="bottom-setting" @click="nextSection('gameTitle')">重新開始</button>
   </GameBattleVue>
 </template>
 
@@ -52,6 +52,21 @@ body {
   height: 800px;
   margin: 0 auto;
 }
+/*按鈕設定 */
+.bottom-setting{
+  background-color: darkred;
+  border: none;
+  font-size: 2rem;
+  border: none;
+  color: whitesmoke;
+  border: thick double gray;
+}
+.bottom-setting:hover{
+  background-color: red;
+}
+.bottom-setting:active{
+  background-color: darkred;
+}
 
 /*遊戲開始 */
 #start-game {
@@ -59,32 +74,18 @@ body {
   top: 500px;
   right: 350px;
   font-size: 2rem;
-  background-color: darkred;
-  border: none;
-  color: whitesmoke;
   padding: 10px 20px;
-}
-#start-game:hover{
-  background-color: red;
-}
-#start-game:active{
-  background-color: darkred;
 }
 /*關閉說明 */
 #close-instroduction{
   position: absolute;
   right: 40px;
   bottom: 40px;
-  font-size: 2rem;
-  background-color: darkred;
-  border: none;
-  color: whitesmoke;
   padding: 10px 20px;
 }
-#close-instroduction:hover{
-  background-color: red;
-}
-#close-instroduction:active{
-  background-color: darkred;
+/*重新開始*/
+#restart{
+  margin-left: 280px;
+  margin-top: 20px;
 }
 </style>

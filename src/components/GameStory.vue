@@ -39,8 +39,8 @@
                 <div class="introduction-imgbox">
                     <img src="../assets/introduction01.jpg" alt="說明">
                 </div>
-                <p>紅色計量表：玩家到家的距離，歸零表示玩家勝利</p>
-                <p>綠色計量表：怨靈和玩家間的距離，歸零表示玩家失敗</p>
+                <p>綠色計量表：玩家到家的距離，歸零表示玩家勝利</p>
+                <p>紅色計量表：怨靈和玩家間的距離，歸零表示玩家失敗</p>
                 <div class="introduction-imgbox2">
                     <img src="../assets/introduction02.jpg" alt="說明">
                 </div>

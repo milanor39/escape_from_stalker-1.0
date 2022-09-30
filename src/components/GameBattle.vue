@@ -4,8 +4,7 @@
             :class="{'end-win': winner === 'ghost','end-lose': winner === 'player','end-draw': winner === 'draw'}"
             v-if="winner">
             <div v-if="winner === 'ghost'">
-                <EndingSceenVue>
-                    <h2>Game Over</h2>
+                <EndingSceenVue class="ending-story">
                     <p>當我趕回家時，在後面追著我的「那個」早已不見蹤影。</p>
                     <p>之後就再也沒有發生過類似的事情了，一切的生活都回歸正常，彷彿這一切都不曾發生似的</p>
                     <p>直到今天，我還是不曉得那個晚上究竟發生了什麼事情</p>
@@ -13,12 +12,28 @@
                 </EndingSceenVue>
                 <slot></slot>
             </div>
-            <div v-else-if="winner === 'player'">你被追上了
-                <EndingSceenVue></EndingSceenVue>
+            <div v-else-if="winner === 'player'">
+                <EndingSceenVue class="ending-story">
+                    <p>「嗚...嗚...嗚...嗚...」</p>
+                    <p>噗叱...噗叱...</p>
+                    <p>黑髮女子坐在我的身上，手上的鋒利菜刀不停地刺入拔出、刺入拔出</p>
+                    <p>鮮血如同泉水般不斷湧出</p>
+                    <p>「哈...喝...哈...喝...噗...」(喘息聲)</p>
+                    <p>嗚...好痛...</p>
+                    <p>為什麼...我這麼倒楣...</p>
+                </EndingSceenVue>
                 <slot></slot>
             </div>
-            <div v-else>平手
-                <EndingSceenVue></EndingSceenVue>
+            <div v-else>
+                <EndingSceenVue class="ending-story">
+                    <p>那天夜裡雖然我逃離了「那個」，但換來的卻是另一場噩夢</p>
+                    <p>每到凌晨1點，房門外就會有一個身影</p>
+                    <p>伴隨著淒厲的哭聲，不斷地用頭敲著和室紙門</p>
+                    <p>碰...</p>
+                    <p>碰...</p>
+                    <p>碰...</p>
+                    <p>彷彿要讓聽見的人通通下地獄一樣</p>
+                </EndingSceenVue>
                 <slot></slot>
             </div>
         </div>
@@ -124,7 +139,7 @@ export default {
             this.ghostAttack();
         },
         surrenderGame() {
-            this.winner = 'ghost'
+            this.winner = 'player'
         },
         ghostAttack() {
             const atkValue = this.randomValue(8, 15)
@@ -156,7 +171,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 /*結局 */
 .end-setting {
     width: 1200px;
@@ -164,6 +179,11 @@ export default {
     padding-top: 20px;
     background-position: center;
     background-size: cover;
+    .ending-story{
+        p{
+            font-size: 1.2rem;
+        }
+    }
 }
 
 .end-win {
@@ -241,6 +261,7 @@ export default {
                     position: relative;
                     padding: 20px 60px;
                     color: whitesmoke;
+                    border: thick double gray;
                 }
 
                 button:hover {
